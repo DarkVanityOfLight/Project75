@@ -7,50 +7,55 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 0.00012207
+margin_left = -2.23235
+margin_top = -0.608612
+margin_right = -2.23236
+margin_bottom = -0.608521
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="NewGameBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.351
+anchor_right = 0.5
+anchor_bottom = 0.351
+margin_left = -63.4886
+margin_top = -9.7235
+margin_right = 62.5434
+margin_bottom = 10.2765
+text = "New Game"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsBtn" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-use_top_left = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CreditsBtn" type="Button" parent="CenterContainer"]
-margin_left = -29.0
-margin_top = -10.0
-margin_right = 28.0
-margin_bottom = 10.0
+margin_left = -28.8777
+margin_top = -10.1973
+margin_right = 28.1223
+margin_bottom = 9.8027
 text = "Credits"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoadGameBtn" type="Button" parent="CenterContainer"]
-margin_left = -42.0
-margin_top = -10.0
-margin_right = 42.0
-margin_bottom = 10.0
+[node name="LoadGameBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.424
+anchor_right = 0.5
+anchor_bottom = 0.424
+margin_left = -40.1815
+margin_top = -10.2199
+margin_right = 41.7704
+margin_bottom = 9.78008
 text = "Load Game"
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NewGameBtn" type="Button" parent="CenterContainer"]
-margin_left = -41.0
-margin_top = -10.0
-margin_right = 41.0
-margin_bottom = 10.0
-text = "New Game"
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
