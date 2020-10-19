@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="KinematicBody2D"]
 position = Vector2( 519.7, 280.615 )
 script = ExtResource( 1 )
 
