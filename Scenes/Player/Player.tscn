@@ -16,7 +16,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 39.685, 0 )
+position = Vector2( 48.8194, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -0.0473366, 0 )
