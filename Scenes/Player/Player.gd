@@ -3,7 +3,7 @@ extends KinematicBody2D
 var Bullet = preload("res://Scenes/Bullet/Bullet.tscn")
 
 var velocity = Vector2()
-var speed = 250
+export (int) var speed = 250
 
 func _ready():
 	pass
@@ -15,6 +15,8 @@ func shoot():
 
 func get_input():
 	velocity = Vector2()
+	look_at(get_global_mouse_position())
+	
 	if Input.is_action_pressed("walk_up"):
 		velocity.y -= 1
 	if Input.is_action_pressed("walk_down"):
@@ -32,5 +34,4 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_collide(velocity *  delta)
-	look_at(get_local_mouse_position())
 	
