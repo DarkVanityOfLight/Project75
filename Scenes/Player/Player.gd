@@ -21,18 +21,27 @@ func un_dodge():
 	$CollisionShape2D.shape.set_extents(extents)
 
 func get_input():
+	var is_moving = false
 	velocity = Vector2()
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("walk_up"):
+		is_moving = true
 		velocity.y -= 1
 	if Input.is_action_pressed("walk_down"):
 		velocity.y += 1
+		is_moving = true
 	if Input.is_action_pressed("walk_left"):
 		velocity.x -= 1
+		is_moving = true
 	if Input.is_action_pressed("walk_right"):
 		velocity.x += 1
-			
+		is_moving = true
+	
+	if is_moving:
+		$AnimatedSprite.play("running")
+	else:
+		$AnimatedSprite.play("standing")
 	velocity = velocity.normalized() * speed
 		
 	if Input.is_action_just_pressed("shoot"):
