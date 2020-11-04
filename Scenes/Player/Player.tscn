@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MainCharacter.png" type="Texture" id=2]
 [ext_resource path="res://Assets/RunningF1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/MainCharacterAnimation (3).png" type="Texture" id=4]
+[ext_resource path="res://Assets/StandingF1.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,7 +13,7 @@ animations = [ {
 "name": "running",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "standing",
 "speed": 5.0
@@ -41,6 +42,8 @@ shape = SubResource( 2 )
 position = Vector2( 43.32, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+self_modulate = Color( 0.580392, 0.211765, 0.211765, 0 )
 position = Vector2( -0.0473366, 0 )
 current = true
 
