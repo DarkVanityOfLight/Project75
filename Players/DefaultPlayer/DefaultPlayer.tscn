@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Players/DefaultPlayer/Assets/MainCharacter.png" type="Texture" id=1]
 [ext_resource path="res://Players/DefaultPlayer/Assets/Running/RunningF1.png" type="Texture" id=2]
 [ext_resource path="res://Players/DefaultPlayer/Assets/Running/RunningF2.png" type="Texture" id=3]
+[ext_resource path="res://Players/DefaultPlayer/DefaultPlayer.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 45.63, 86.2531 )
@@ -25,6 +26,7 @@ animations = [ {
 
 [node name="DefaultPlayer" type="KinematicBody2D"]
 scale = Vector2( 0.7245, 0.736056 )
+script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
