@@ -1,23 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MainCharacter.png" type="Texture" id=2]
+[ext_resource path="res://Assets/RunningF1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MainCharacterAnimation (3).png" type="Texture" id=4]
+[ext_resource path="res://Assets/StandingF1.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.3483, 31.8312 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "standing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22, 25 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -50.2422, -85.1394, 47.8969, -85.8886, 50.8935, 86.4167, 26.1714, 86.4167, 26.9205, 61.6947, -27.0185, 61.6947, -26.2693, 85.6676, -49.4931, 85.6676 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+visible = false
+position = Vector2( 0.5, 17.5 )
+shape = SubResource( 2 )
 
 [node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 48.8194, 0 )
+position = Vector2( 43.32, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+self_modulate = Color( 0.580392, 0.211765, 0.211765, 0 )
 position = Vector2( -0.0473366, 0 )
 current = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+occluder = SubResource( 3 )
